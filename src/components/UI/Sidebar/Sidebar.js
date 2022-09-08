@@ -60,8 +60,11 @@ const Sidebar = () => {
                     className='datepicker'
                 />
             </div>
-            <p>
+            <div>
                 Add task
+            </div>
+            <p>
+                Current tasks
             </p>
         </div>
     );
