@@ -1,8 +1,7 @@
+import MainPage from "./containers/MainPage/MainPage";
 
-const App = () => (
-    <div>
-      test
-    </div>
-);
+const App = () => {
+    return (<MainPage/>)
+};
 
 export default App;

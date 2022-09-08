@@ -1,0 +1,30 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: rgb(107, 114, 128);
+}
+
+.btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(46, 49, 55);
+}
+
+.header {
+    font-weight: 400;
+}
+
+.date {
+    width: 130px;
+    text-align: center;
+    display: inline-block;
+}
+
+.datepicker {
+    width: 100px;
+    margin-top: 10px;
+    text-align: center;
+}

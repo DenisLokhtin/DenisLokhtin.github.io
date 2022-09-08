@@ -1,0 +1,8 @@
+.day-card {
+    border: 1px solid #efefef;
+    height: 14.2vh;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 300;
+}
