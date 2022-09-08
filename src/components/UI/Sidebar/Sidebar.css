@@ -27,4 +27,7 @@
     width: 100px;
     margin-top: 10px;
     text-align: center;
+    border: 1px solid rgb(107, 114, 128);
+    color: rgb(107, 114, 128);
+    border-radius: 4px;
 }

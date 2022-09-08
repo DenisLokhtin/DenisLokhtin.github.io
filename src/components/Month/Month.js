@@ -5,9 +5,9 @@ import './Month.css'
 const Month = ({month}) => {
     return (
             <div className='month'>
-                {month.map((row, i) => (
+                {month.map((elem, i) => (
                     <React.Fragment key={i}>
-                        {row.map((day, idx) => (
+                        {elem.map((day, idx) => (
                             <Day day={day} key={idx} rowIdx={i}/>
                         ))}
                     </React.Fragment>
