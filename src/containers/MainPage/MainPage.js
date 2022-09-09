@@ -1,9 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react';
-import getMonth from "../../middlewares/getMonth";
+import getMonth from "../../utils/getMonth";
 import Month from "../../components/Month/Month";
 import Sidebar from "../../components/UI/Sidebar/Sidebar";
 import GlobalContext from "../../context/GlobalContext";
-import dayjs from "dayjs";
 import './Mainpage.css'
 import EventModal from "../../components/EventModal/EventModal";
 
@@ -17,9 +16,10 @@ const MainPage = () => {
     }, [monthIndex]);
 
     useEffect(() => {
-        setMonthIndex(dayjs().format('M') - 1);
         const localData = JSON.parse(localStorage.getItem('index'));
-        setMonthIndex(localData)
+        if (localData) {
+            setMonthIndex(localData)
+        }
     }, []);
 
     return (

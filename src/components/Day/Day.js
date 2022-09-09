@@ -5,7 +5,6 @@ import GlobalContext from "../../context/GlobalContext";
 
 const Day = ({day}) => {
     const [dayEvents, setDayEvents] = useState([]);
-    const {monthIndex} = useContext(GlobalContext);
     const stylesNormal = ['day-card'];
     const stylesOtherMonth = ['day-card', 'other-Month'];
 
@@ -14,6 +13,7 @@ const Day = ({day}) => {
         setSelectedEvent,
         setShowEventModal,
         setDaySelected,
+        monthIndex
     } = useContext(GlobalContext);
 
     useEffect(() => {
@@ -66,8 +66,7 @@ const Day = ({day}) => {
         }
     }
 
-    return print
-    ();
+    return print();
 };
 
 export default Day;
