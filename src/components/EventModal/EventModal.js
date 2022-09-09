@@ -21,7 +21,6 @@ const EventModal = () => {
     const [date, setDate] = useState(selectedEvent ? selectedEvent.date : "");
     const [time, setTime] = useState(selectedEvent ? selectedEvent.time : "");
 
-
     const handleSubmit = e => {
         e.preventDefault();
         const calendarEvent = {
@@ -41,13 +40,14 @@ const EventModal = () => {
         setDate(selectedEvent ? selectedEvent.date : "");
         setTime(selectedEvent ? selectedEvent.time : "");
         setShowEventModal(false);
+        console.log(date)
     };
 
     return (
         <>
             <div className='event-modal'>
                 <span className='close' onClick={() => setShowEventModal(false)}>
-                    X
+                    x
                 </span>
                 {selectedEvent && (
                     <DeleteForeverIcon
@@ -85,6 +85,7 @@ const EventModal = () => {
                                 inputFormat="DD/MM/YYYY"
                                 value={date}
                                 minDate='01/12/2020'
+                                required
                                 maxDate='01/12/2030'
                                 onChange={(data: TDate) => setDate(data)}
                                 renderInput={(params) => <TextField {...params} required sx={{width: 235, mt: 2}}/>}
@@ -102,7 +103,7 @@ const EventModal = () => {
                         type="submit"
                         onClick={handleSubmit}
                         sx={{mt: 4}}
-                        disabled={title.length === 0 || date.length === 0}
+                        disabled={title === '' || date === '' || date === null}
                     >
                         Save
                     </Button>
