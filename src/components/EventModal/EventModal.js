@@ -40,7 +40,6 @@ const EventModal = () => {
         setDate(selectedEvent ? selectedEvent.date : "");
         setTime(selectedEvent ? selectedEvent.time : "");
         setShowEventModal(false);
-        console.log(date)
     };
 
     return (
@@ -87,13 +86,13 @@ const EventModal = () => {
                                 minDate='01/12/2020'
                                 required
                                 maxDate='01/12/2030'
-                                onChange={(data: TDate) => setDate(data)}
+                                onChange={(data) => setDate(data)}
                                 renderInput={(params) => <TextField {...params} required sx={{width: 235, mt: 2}}/>}
                             />
                             <TimePicker
                                 label="Time"
                                 value={time}
-                                onChange={(data: TDate) => setTime(data)}
+                                onChange={(data) => setTime(data)}
                                 renderInput={(params) => <TextField {...params} sx={{width: 235, mt: 2}}/>}
                             />
                         </LocalizationProvider>
