@@ -63,9 +63,6 @@ const Sidebar = () => {
             <div className='add-event' onClick={() => setShowEventModal(true)}>
                 +
             </div>
-            <p>
-                Current tasks
-            </p>
         </div>
     );
 };
