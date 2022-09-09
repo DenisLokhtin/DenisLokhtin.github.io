@@ -11,3 +11,17 @@
     padding: 10px;
     text-align: center;
 }
+
+.close {
+    cursor: pointer;
+    font-size: 20px;
+    position: fixed;
+    right: 20px;
+}
+
+.evt-delete {
+    cursor: pointer;
+    font-size: 20px;
+    position: fixed;
+    right: 40px;
+}
