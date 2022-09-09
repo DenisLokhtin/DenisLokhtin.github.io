@@ -7,7 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 const Sidebar = () => {
-    const {monthIndex, setMonthIndex} = useContext(GlobalContext);
+    const {monthIndex, setMonthIndex, setShowEventModal} = useContext(GlobalContext);
     const [startDate, setStartDate] = useState(new Date(dayjs().year(), monthIndex))
     useMemo(() => {
         setStartDate(new Date(dayjs().year(), monthIndex));
@@ -55,13 +55,13 @@ const Sidebar = () => {
                 <DatePicker
                     selected={startDate}
                     onChange={(date: Date) => setStartDate(date)}
-                    dateFormat="MMMM yyyy"
+                    dateFormat="MMMM yyyy "
                     showMonthYearPicker
                     className='datepicker'
                 />
             </div>
-            <div>
-                Add task
+            <div className='add-event' onClick={() => setShowEventModal(true)}>
+                +
             </div>
             <p>
                 Current tasks

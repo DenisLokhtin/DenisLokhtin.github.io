@@ -5,11 +5,12 @@ import Sidebar from "../../components/UI/Sidebar/Sidebar";
 import GlobalContext from "../../context/GlobalContext";
 import dayjs from "dayjs";
 import './Mainpage.css'
+import EventModal from "../../components/EventModal/EventModal";
 
 
 const MainPage = () => {
     const [currentMonth, setCurrentMonth] = useState(getMonth());
-    const {monthIndex, setMonthIndex} = useContext(GlobalContext);
+    const {monthIndex, setMonthIndex, showEventModal} = useContext(GlobalContext);
 
     useEffect(() => {
         setCurrentMonth(getMonth(monthIndex));
@@ -22,10 +23,13 @@ const MainPage = () => {
     }, []);
 
     return (
-        <div className='container'>
-            <Sidebar/>
-            <Month month={currentMonth}/>
-        </div>
+        <>
+            {showEventModal && <EventModal/>}
+            <div className='container'>
+                <Sidebar/>
+                <Month month={currentMonth}/>
+            </div>
+        </>
     );
 };
 
