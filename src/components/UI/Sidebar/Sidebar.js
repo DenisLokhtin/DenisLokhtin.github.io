@@ -5,6 +5,10 @@ import GlobalContext from "../../../context/GlobalContext";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
+import {IconButton} from "@mui/material";
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 
 const Sidebar = () => {
     const {monthIndex, setMonthIndex, setShowEventModal} = useContext(GlobalContext);
@@ -41,17 +45,22 @@ const Sidebar = () => {
 
     return (
         <div className='sidebar'>
-            <h2 className='header'>Calendar</h2>
+            <div className='calendar-title'>
+                <CalendarTodayIcon/>
+                <h2 className='title'>Calendar</h2>
+            </div>
             <div>
-                <button className='btn' onClick={decreaseIndex}>
-                    &lt;
-                </button>
-                <div className='date'>
-                    {now}
+                <div className='navigation'>
+                    <IconButton onClick={decreaseIndex}>
+                        <ChevronLeftIcon/>
+                    </IconButton>
+                    <div className='date'>
+                        {now}
+                    </div>
+                    <IconButton onClick={increaseIndex}>
+                        <ChevronRightIcon/>
+                    </IconButton>
                 </div>
-                <button className='btn' onClick={increaseIndex}>
-                    &gt;
-                </button>
                 <DatePicker
                     selected={startDate}
                     onChange={(date: Date) => setStartDate(date)}

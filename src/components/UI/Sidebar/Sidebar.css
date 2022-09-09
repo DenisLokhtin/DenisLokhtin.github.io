@@ -5,16 +5,21 @@
     color: rgb(107, 114, 128);
 }
 
-.btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    color: rgb(46, 49, 55);
+.calendar-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.header {
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
     font-weight: 400;
+    margin: 20px;
 }
 
 .date {
