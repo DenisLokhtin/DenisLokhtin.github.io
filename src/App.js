@@ -1,7 +1,7 @@
 import MainPage from "./containers/MainPage/MainPage";
 
 const App = () => {
-    return (<MainPage/>)
+  return <MainPage />;
 };
 
 export default App;

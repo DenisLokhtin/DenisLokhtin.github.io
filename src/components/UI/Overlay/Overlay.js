@@ -1,10 +1,8 @@
-import React from 'react';
-import './Overlay.css';
+import React from "react";
+import "./Overlay.css";
 
 const Overlay = () => {
-    return (
-        <div className="overlay"/>
-    );
+  return <div className="overlay" />;
 };
 
 export default Overlay;
