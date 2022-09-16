@@ -20,7 +20,7 @@ const MainPage = () => {
     if (localData) {
       setMonthIndex(localData);
     }
-  }, []);
+  }, [setMonthIndex]);
 
   return (
     <>

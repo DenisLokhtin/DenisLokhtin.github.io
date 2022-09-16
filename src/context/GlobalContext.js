@@ -5,7 +5,7 @@ const GlobalContext = React.createContext({
   setMonthIndex: () => {},
   showEventModal: false,
   setShowEventModal: () => {},
-  dispatchCalEvent: ({}) => {},
+  dispatchCalEvent: () => {},
   savedEvents: [],
   daySelected: null,
   setDaySelected: () => {},

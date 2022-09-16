@@ -67,7 +67,7 @@ const EventModal = () => {
               label="Add a title"
               variant="outlined"
               value={title}
-              required
+              required={true}
               onChange={(e) => setTitle(e.target.value)}
             />
             <TextField
@@ -83,7 +83,7 @@ const EventModal = () => {
                 inputFormat="DD/MM/YYYY"
                 value={date}
                 minDate="01/12/2020"
-                required
+                required={true}
                 maxDate="01/12/2030"
                 onChange={(data) => setDate(data)}
                 renderInput={(params) => (
