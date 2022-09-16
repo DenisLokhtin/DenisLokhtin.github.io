@@ -1,14 +1,15 @@
 import React, { useContext, useEffect, useMemo, useState } from "react";
-import "./Sidebar.css";
-import dayjs from "dayjs";
 import GlobalContext from "../../../context/GlobalContext";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
-import { IconButton } from "@mui/material";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
+import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from "react-datepicker";
+import { IconButton } from "@mui/material";
+import dayjs from "dayjs";
+import "./Sidebar.css";
+import { SetIndex } from "../../../Actions/MonthIndex";
 
 const Sidebar = () => {
   const { monthIndex, setMonthIndex, setShowEventModal } =
@@ -22,12 +23,12 @@ const Sidebar = () => {
 
   const increaseIndex = () => {
     setMonthIndex(monthIndex + 1);
-    localStorage.setItem("index", JSON.stringify(monthIndex + 1));
+    SetIndex(monthIndex + 1);
   };
 
   const decreaseIndex = () => {
     setMonthIndex(monthIndex - 1);
-    localStorage.setItem("index", JSON.stringify(monthIndex - 1));
+    SetIndex(monthIndex - 1);
   };
 
   const now = dayjs(new Date(dayjs().year(), monthIndex)).format("MMMM YYYY");
@@ -39,7 +40,7 @@ const Sidebar = () => {
 
       if (diffMonth !== 0) {
         setMonthIndex(monthIndex + diffMonth);
-        localStorage.setItem("index", JSON.stringify(monthIndex + diffMonth));
+        SetIndex(monthIndex + diffMonth);
       }
     };
 

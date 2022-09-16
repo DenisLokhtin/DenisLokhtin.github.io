@@ -3,8 +3,9 @@ import getMonth from "../../utils/getMonth";
 import Month from "../../components/Month/Month";
 import Sidebar from "../../components/UI/Sidebar/Sidebar";
 import GlobalContext from "../../context/GlobalContext";
-import "./Mainpage.css";
 import EventModal from "../../components/EventModal/EventModal";
+import "./Mainpage.css";
+import { GetIndex } from "../../Actions/MonthIndex";
 
 const MainPage = () => {
   const [currentMonth, setCurrentMonth] = useState(getMonth());
@@ -16,7 +17,7 @@ const MainPage = () => {
   }, [monthIndex]);
 
   useEffect(() => {
-    const localData = JSON.parse(localStorage.getItem("index"));
+    const localData = GetIndex("index");
     if (localData) {
       setMonthIndex(localData);
     }

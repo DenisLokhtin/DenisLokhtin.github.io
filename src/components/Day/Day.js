@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./Day.css";
-import dayjs from "dayjs";
 import GlobalContext from "../../context/GlobalContext";
+import dayjs from "dayjs";
+import "./Day.css";
 
 const Day = ({ day }) => {
   const [dayEvents, setDayEvents] = useState([]);
