@@ -32,19 +32,19 @@ const Sidebar = () => {
 
   const now = dayjs(new Date(dayjs().year(), monthIndex)).format("MMMM YYYY");
 
-  const difference = () => {
-    const currentDate = new Date(dayjs().year(), monthIndex);
-    let diffMonth = dayjs(startDate).diff(dayjs(currentDate), "month");
-
-    if (diffMonth !== 0) {
-      setMonthIndex(monthIndex + diffMonth);
-      localStorage.setItem("index", JSON.stringify(monthIndex + diffMonth));
-    }
-  };
-
   useEffect(() => {
+    const difference = () => {
+      const currentDate = new Date(dayjs().year(), monthIndex);
+      let diffMonth = dayjs(startDate).diff(dayjs(currentDate), "month");
+
+      if (diffMonth !== 0) {
+        setMonthIndex(monthIndex + diffMonth);
+        localStorage.setItem("index", JSON.stringify(monthIndex + diffMonth));
+      }
+    };
+
     difference();
-  }, [startDate]);
+  }, [startDate, monthIndex, setMonthIndex]);
 
   return (
     <div className="sidebar">
