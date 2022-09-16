@@ -1,6 +1,7 @@
 import React, { useEffect, useReducer, useState } from "react";
 import GlobalContext from "./GlobalContext";
 import dayjs from "dayjs";
+import { GetEvents, SetEvents } from "../Actions/SavedEvents";
 
 const ContextWrapper = (props) => {
   const savedEventsReducer = (state, { type, payload }) => {
@@ -17,8 +18,8 @@ const ContextWrapper = (props) => {
   };
 
   const initEvents = () => {
-    const storageEvents = localStorage.getItem("savedEvents");
-    return storageEvents ? JSON.parse(storageEvents) : [];
+    const storageEvents = GetEvents();
+    return storageEvents ? storageEvents : [];
   };
 
   const [monthIndex, setMonthIndex] = useState(dayjs().month());
@@ -32,7 +33,7 @@ const ContextWrapper = (props) => {
   );
 
   useEffect(() => {
-    localStorage.setItem("savedEvents", JSON.stringify(savedEvents));
+    SetEvents(savedEvents);
   }, [savedEvents]);
 
   useEffect(() => {
