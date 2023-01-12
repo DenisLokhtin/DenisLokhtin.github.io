@@ -41,7 +41,14 @@
     display: flex;
     justify-content: space-between;
     max-width: 100%;
+}
+
+.event-in-day:nth-child(odd) {
     background: #eba9ff;
+}
+
+.event-in-day:nth-child(even) {
+    background: #c92bff;
 }
 
 .evt-date {

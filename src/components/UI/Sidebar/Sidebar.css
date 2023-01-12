@@ -55,3 +55,29 @@
     background-color: #9e37ff;
     transform: scale(1.1);
 }
+
+.events {
+    text-align: center;
+}
+
+.events-list {
+    margin: 0 auto;
+    max-height: 650px;
+    overflow: auto;
+    max-width: 200px;
+    padding-right: 10px;
+}
+
+.events-list::-webkit-scrollbar {
+    width: 16px;
+}
+
+.events-list::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+.events-list::-webkit-scrollbar-thumb {
+    background-color: #8f54a0;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+}

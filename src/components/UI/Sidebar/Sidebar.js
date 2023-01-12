@@ -12,7 +12,7 @@ import "./Sidebar.css";
 import { SetIndex } from "../../../Actions/MonthIndex";
 
 const Sidebar = () => {
-  const { monthIndex, setMonthIndex, setShowEventModal } =
+  const { monthIndex, setMonthIndex, setShowEventModal, savedEvents, setSelectedEvent, } =
     useContext(GlobalContext);
   const [startDate, setStartDate] = useState(
     new Date(dayjs().year(), monthIndex)
@@ -73,6 +73,29 @@ const Sidebar = () => {
       </div>
       <div className="add-event" onClick={() => setShowEventModal(true)}>
         +
+      </div>
+      <div className="events">
+        <h3>Events list</h3>
+        <div className="events-list">
+          <div
+              onClick={() => {
+                setShowEventModal(true);
+              }}
+          >
+            {savedEvents.map((evt, idx) => (
+                <div
+                    key={idx}
+                    onClick={() => setSelectedEvent(evt)}
+                    className="event-in-day"
+                >
+                  <div className="evt-title">{evt.title}</div>
+                  <div className="evt-date">
+                    {evt.time ? dayjs(evt.time).format("hh:mm") : null}
+                  </div>
+                </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
