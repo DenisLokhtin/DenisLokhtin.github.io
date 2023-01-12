@@ -25,7 +25,7 @@ const MainPage = () => {
 
   return (
     <>
-      {showEventModal && <EventModal />}
+      {showEventModal && <EventModal/>}
       <div className="container">
         <Sidebar />
         <Month month={currentMonth} />
